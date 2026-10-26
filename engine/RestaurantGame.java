@@ -23,15 +23,7 @@ public class RestaurantGame {
     private final Chef chef = new Chef();
     private final Cashier cashier = new Cashier();
 
-    // Stage 2: which customer type arrives on which turn
-    private final ArrivalSchedule schedule;
-
     public RestaurantGame() {
-        this(ArrivalSchedule.baseSetting());
-    }
-
-    public RestaurantGame(ArrivalSchedule schedule) {
-        this.schedule = schedule;
         //initialise 2 tables and the menu
         for (int i = 1; i < 3; i++) {
             tables.add(new Table(i));
@@ -48,10 +40,10 @@ public class RestaurantGame {
         chef.resetTurn();
         cashier.resetTurn();
 
-        // Arrivals on turns 1, 4, 7, 10, 13, 16 (customer type decided by the schedule)
-        Customer newCust = schedule.createArrival(currentTurn, customerIdCounter);
-        if (newCust != null) {
-            customerIdCounter++;
+        // Arrivals on turns 1, 4, 7, 10, 13, 16
+        if (currentTurn == 1 || currentTurn == 4 || currentTurn == 7
+                || currentTurn == 10 || currentTurn == 13 || currentTurn == 16) {
+            Customer newCust = new Customer(customerIdCounter++, currentTurn);
             newCust.chooseFood(menu);
             waitingQueue.add(newCust);
         }
@@ -140,11 +132,8 @@ public class RestaurantGame {
     }
 
     public boolean isVictory() {
-        // Targets from the brief: >= 4 paid, revenue >= $45.00, average satisfaction >= 60.
-        // (average >= 60 is tested as total >= 60 * paid to avoid integer truncation)
-        return paidCustomerCount >= 4
-                && bankBalanceCents >= 4500
-                && totalCustomerSatisfaction >= 60 * paidCustomerCount;
+        int mean = getAveragePaidCustomerSatisfaction();
+        return bankBalanceCents >= 4500 && totalAbandoned <= 2 && mean <= 60;
     }
 
     // Getters and Helpers
