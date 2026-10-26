@@ -43,6 +43,8 @@ public class Waiter extends Staff {
         }
 
         o.markServed();
+        // Stage 2: the customer reacts in its own way (polymorphic hook, no type check).
+        o.getCustomer().onServed(currentTurn);
         actionUsed = true;
         return true;
     }

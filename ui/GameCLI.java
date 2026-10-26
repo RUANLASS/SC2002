@@ -106,8 +106,11 @@ public class GameCLI {
                             "Enter table number to take order from (1-2): ", 1, 2);
 
                     if (game.waiterTakeOrder(tableId)) {
+                        Order placed = game.getTable(tableId).getCurrentOrder();
                         System.out.printf(
-                                ">> Success: Order taken for Table %d!%n", tableId);
+                                ">> Success: Order taken for Table %d: %s, bill $%.2f%n",
+                                tableId, placed.getItem().getName(),
+                                placed.getLockedPriceCents() / 100.0);
                     } else {
                         System.out.println(
                                 ">> Action Failed: Table empty or order already placed. Re-select!");
@@ -123,6 +126,10 @@ public class GameCLI {
                         System.out.printf(
                                 ">> Success: Dish served to Table %d! Customer is now eating.%n",
                                 tableId);
+                        String reaction = game.getTable(tableId).getCurrentCustomer().getServiceReaction();
+                        if (reaction != null) {
+                            System.out.println(">> " + reaction);
+                        }
                     } else {
                         System.out.println(
                                 ">> Action Failed: Dish is NOT ready, or was just cooked this turn (lag rule)! Re-select!");
