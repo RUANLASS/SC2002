@@ -35,14 +35,20 @@ public class Order {
         return (this.prepcount >= item.getPrepUnits());
     }
 
+    private boolean justServed = false;
+
     public void markServed() {
         this.status = OrderStatus.SERVED;
         this.eatingTurnsRemaining = 1;
+        this.justServed = true;
     }
 
     // Decrements eating timer; transitions to READY_TO_PAY when done
+    // A customer served on turn T eats during T+1, becomes READY_TO_PAY then,
+    // and pays on T+2 at the earliest (the serving turn's tick is skipped).
     public void tickEating() {
         if (this.status == OrderStatus.SERVED) {
+            if (justServed) { justServed = false; return; }
             this.eatingTurnsRemaining--;
             if (this.eatingTurnsRemaining <= 0) {
                 this.status = OrderStatus.READY_TO_PAY;
