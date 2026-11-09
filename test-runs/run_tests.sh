@@ -15,7 +15,7 @@ build() {            # build <source dir> <class dir>
   return "${PIPESTATUS[0]}"
 }
 
-declare -A SRC=( [stage-1]="$ROOT" [stage-2]="$ROOT/Stage-2" [stage-3]="$ROOT/Stage-3" )
+declare -A SRC=( [stage-1]="$ROOT/Stage-1" [stage-2]="$ROOT/Stage-2" [stage-3]="$ROOT/Stage-3" )
 
 for stage in stage-1 stage-2 stage-3; do
   mkdir -p "$TMP/$stage"
