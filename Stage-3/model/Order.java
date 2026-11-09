@@ -9,6 +9,8 @@ public class Order {
     private int readyTurn = -1;         // Turn when Chef completed cooking
     private int eatingTurnsRemaining = 1; // 1 full turn to eat
     private int prepcount = 0;
+    // Eating starts the turn AFTER serving: a dish served this turn is not ticked at this turn's end.
+    private boolean justServed = false;
 
     public Order(Customer customer, MenuItem item, int lockedPriceCents) {
         this.customer = customer;
@@ -35,8 +37,6 @@ public class Order {
         return (this.prepcount >= item.getPrepUnits());
     }
 
-    private boolean justServed = false;
-
     public void markServed() {
         this.status = OrderStatus.SERVED;
         this.eatingTurnsRemaining = 1;
@@ -44,11 +44,12 @@ public class Order {
     }
 
     // Decrements eating timer; transitions to READY_TO_PAY when done
-    // A customer served on turn T eats during T+1, becomes READY_TO_PAY then,
-    // and pays on T+2 at the earliest (the serving turn's tick is skipped).
     public void tickEating() {
         if (this.status == OrderStatus.SERVED) {
-            if (justServed) { justServed = false; return; }
+            if (justServed) { // served this turn: the customer eats during the NEXT turn
+                justServed = false;
+                return;
+            }
             this.eatingTurnsRemaining--;
             if (this.eatingTurnsRemaining <= 0) {
                 this.status = OrderStatus.READY_TO_PAY;

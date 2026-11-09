@@ -1,0 +1,281 @@
+@startuml class-diagram
+title Restaurant Rush - final class diagram (Stage 3)
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam dpi 110
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam ArrowColor #444444
+skinparam nodesep 35
+skinparam ranksep 45
+skinparam class {
+  BorderColor #555555
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<control>> #FFF3C4
+  BackgroundColor<<boundary>> #D9ECFF
+  }
+skinparam note {
+  BackgroundColor #FFFBE6
+  BorderColor #B59B00
+}
+hide empty members
+
+legend top right
+  Stereotypes: blue = boundary (ui), yellow = control (engine),
+  white = entity (model and staff).
+  Filled diamond = composition (the whole creates its parts).
+  Hollow diamond = aggregation (parts passed in by reference).
+  Attributes that are objects are shown as association ends.
+  Trivial getters are omitted.
+endlegend
+
+class Main <<boundary>> {
+  +main(args : String[]) {static}
+}
+class GameCLI <<boundary>> {
+  +displayWelcome()
+  +displayStartOfTurn()
+  +promptStaffActions()
+  +displayEndOfTurnSummary()
+  +displayGameResult()
+  -promptHappyHour()
+  -promptHostAction()
+  -promptWaiterAction()
+  -promptChefAction()
+  -promptCashierAction()
+}
+class InputValidator <<boundary>> {
+  -sc : Scanner
+  +getIntInRange(prompt : String, min : int, max : int) : int
+}
+
+class RestaurantGame <<control>> {
+  -currentTurn : int
+  -bankBalanceCents : int
+  -totalAbandoned : int
+  -servedCount : int
+  -paidCustomerCount : int
+  -totalCustomerSatisfaction : int
+  -customerIdCounter : int
+  +step1_processArrivals()
+  +activateHappyHour() : boolean
+  +hostSeatCustomer(tableId : int) : boolean
+  +waiterSeatCustomer(tableId : int) : boolean
+  +waiterTakeOrder(tableId : int) : boolean
+  +waiterServeDish(tableId : int) : boolean
+  +chefCookDish(tableId : int) : boolean
+  +cashierCollectPayment() : boolean
+  +resolveTurnEndPhases()
+  +isGameOver() : boolean
+  +isVictory() : boolean
+  -applyHappyHourRecovery()
+  -isStillWaiting(o : Order) : boolean {static}
+}
+class ArrivalSchedule <<control>> {
+  -arrivals : Map<Integer, BiFunction<Integer, Integer, Customer>>
+  +add(turn : int, constructor : BiFunction) : ArrivalSchedule
+  +createArrival(turn : int, customerId : int) : Customer
+  +baseSetting() : ArrivalSchedule {static}
+}
+
+abstract class Staff <<entity>> {
+  #actionUsed : boolean
+  +hasActed() : boolean
+  +resetTurn()
+}
+class Waiter <<entity>> {
+  +seatCustomer(queue : Queue<Customer>, table : Table) : boolean
+  +takeOrder(table : Table, happyHour : HappyHour) : boolean
+  +serveDish(table : Table, currentTurn : int) : boolean
+  +Skip() : boolean
+}
+class Chef <<entity>> {
+  +cookDish(table : Table, currentTurn : int) : boolean
+  +Skip() : boolean
+}
+class Cashier <<entity>> {
+  +collectPayment(tables : List<Table>) : PaymentResult
+}
+class "Cashier.PaymentResult" as PaymentResult <<record>> {
+  +amountPaid : int
+  +custSat : int
+}
+class Host <<entity>> {
+  +seatCustomer(queue : Queue<Customer>, table : Table) : boolean
+}
+
+class Customer <<entity>> {
+  -REGULAR_DECAY_RATE : int = 8 {static}
+  -id : int
+  -arriveTurn : int
+  -satisfaction : int
+  +getDecayRate() : int
+  +applyDiscount(basePriceCents : int) : int
+  +getTypeName() : String
+  #selectItem(menu : List<MenuItem>) : MenuItem
+  +onServed(currentTurn : int)
+  +getServiceReaction() : String
+  +chooseFood(menu : List<MenuItem>) : MenuItem
+  +chooseFood(menu : List<MenuItem>, policy : ComboPolicy) : MenuItem
+  +decaySatisfaction()
+  +boostSatisfaction(amount : int)
+  +hasAbandoned() : boolean
+  +getSatisfaction() : int
+}
+class VIPCustomer <<entity>> {
+  -VIP_DECAY_RATE : int = 5 {static}
+  -DISCOUNT_PERCENT : int = 10 {static}
+  +getDecayRate() : int
+  +applyDiscount(basePriceCents : int) : int
+  +getTypeName() : String
+}
+class CriticCustomer <<entity>> {
+  -CRITIC_DECAY_RATE : int = 12 {static}
+  -IMPRESSED_WITHIN_TURNS : int = 3 {static}
+  -IMPRESSED_BONUS : int = 10 {static}
+  -reaction : String
+  +getDecayRate() : int
+  +getTypeName() : String
+  #selectItem(menu : List<MenuItem>) : MenuItem
+  +onServed(currentTurn : int)
+  +getServiceReaction() : String
+}
+interface MenuItem <<entity>> {
+  +getName() : String
+  +getPriceCents() : int
+  +getPrepUnits() : int
+  +getPriceDollars() : String
+}
+class SingleMenuItem <<entity>> {
+  -name : String
+  -prepUnits : int
+  -priceCents : int
+}
+class ComboMeal <<entity>> {
+  -COMBO_PERCENT : int = 90 {static}
+  +getPriceCents() : int
+  +getPrepUnits() : int
+}
+class ComboPolicy <<entity>> {
+  +wantsCombo(customer : Customer) : boolean
+  +choose(customer : Customer, preferred : MenuItem, menu : List<MenuItem>) : MenuItem
+}
+class HappyHour <<entity>> {
+  +DURATION_TURNS : int = 2 {static}
+  -DISCOUNT_PERCENT : int = 20 {static}
+  -RECOVERY_POINTS : int = 15 {static}
+  -used : boolean
+  -turnsRemaining : int
+  +activate() : boolean
+  +endTurn()
+  +isActive() : boolean
+  +isAvailable() : boolean
+  +applyTo(priceCents : int) : int
+  +getStatusText() : String
+}
+class Order <<entity>> {
+  -lockedPriceCents : int
+  -readyTurn : int
+  -eatingTurnsRemaining : int
+  -prepcount : int
+  -justServed : boolean
+  +markReady(currentTurn : int)
+  +canBeServed(currentTurn : int) : boolean
+  +cook()
+  +cooked() : boolean
+  +markServed()
+  +tickEating()
+  +markPaid()
+  +cancel()
+}
+enum OrderStatus <<enumeration>> {
+  ORDERED
+  READY
+  SERVED
+  READY_TO_PAY
+  PAID
+  CANCELLED
+}
+class Table <<entity>> {
+  -tableId : int
+  +isOccupied() : boolean
+  +seat(c : Customer)
+  +setOrder(o : Order)
+  +clear()
+}
+
+' ---- inheritance and realisation ----
+Staff <|-- Waiter
+Staff <|-- Chef
+Staff <|-- Cashier
+Staff <|-- Host
+Customer <|-- VIPCustomer
+Customer <|-- CriticCustomer
+MenuItem <|.. SingleMenuItem
+MenuItem <|.. ComboMeal
+
+' ---- boundary ----
+Main ..> GameCLI : <<create>>
+Main ..> RestaurantGame : <<create>>
+GameCLI --> "1" RestaurantGame : game
+GameCLI *-- "1" InputValidator : validator
+
+' ---- control owns roles and policies ----
+RestaurantGame *-- "1" Waiter : waiter
+RestaurantGame *-- "1" Chef : chef
+RestaurantGame *-- "1" Cashier : cashier
+RestaurantGame *-- "1" Host : host
+RestaurantGame *-- "1" HappyHour : happyHour
+RestaurantGame *-- "1" ComboPolicy : comboPolicy
+RestaurantGame o-- "1" ArrivalSchedule : schedule
+
+' ---- control owns the world ----
+RestaurantGame *-- "2" Table : tables
+RestaurantGame *-- "3" MenuItem : menu
+RestaurantGame o-- "0..*" Customer : waitingQueue
+ArrivalSchedule ..> Customer : <<create>>
+
+' ---- entities ----
+Table "1" o-- "0..1" Customer : currentCustomer
+Table "1" o-- "0..1" Order : currentOrder
+Order --> "1" Customer : customer
+Order --> "1" MenuItem : item
+Order --> "1" OrderStatus : status
+Customer --> "0..1" MenuItem : item
+ComboMeal o-- "2" MenuItem : first, second
+ComboPolicy ..> ComboMeal : <<create>>
+Cashier +-- PaymentResult
+Waiter ..> Order : <<create>>
+Waiter ..> HappyHour : prices with
+
+note bottom of HappyHour
+  ENCAPSULATION: all Happy Hour state
+  (used, turnsRemaining) is private. The
+  controller can only call activate(),
+  endTurn() and applyTo().
+end note
+note left of Customer
+  POLYMORPHISM: Waiter and RestaurantGame call
+  getDecayRate(), applyDiscount(), selectItem()
+  and onServed() on a Customer reference.
+  VIPCustomer and CriticCustomer override them,
+  so the controller has no type checks.
+end note
+note bottom of ComboMeal
+  AGGREGATION (delegation): receives two MenuItems by
+  reference, derives its price and units from them, and
+  implements MenuItem, so Order, Chef and Cashier treat
+  it like a single dish.
+end note
+note right of RestaurantGame
+  COMPOSITION: RestaurantGame creates and owns its
+  Tables, MenuItems, Waiter, Chef, Cashier, Host,
+  HappyHour and ComboPolicy. They exist only as parts
+  of one game.
+end note
+note right of Order
+  ENCAPSULATION: status changes only through
+  markReady, markServed, tickEating, markPaid
+  and cancel.
+end note
+@enduml

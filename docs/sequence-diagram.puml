@@ -1,0 +1,147 @@
+@startuml sequence-diagram
+title Critic scenario (Stage 3): the manager's turn-10 choice changes the outcome
+skinparam shadowing false
+skinparam dpi 100
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam sequenceMessageAlign left
+skinparam ParticipantPadding 8
+skinparam BoxPadding 6
+skinparam note {
+  BackgroundColor #FFFBE6
+  BorderColor #B59B00
+}
+autonumber
+hide footbox
+
+actor Manager
+participant ":GameCLI" as CLI
+participant ":RestaurantGame" as G
+participant ":ArrivalSchedule" as AS
+participant ":Host" as H
+participant ":Waiter" as W
+participant ":Chef" as CH
+participant ":Cashier" as K
+participant "c:CriticCustomer" as C
+participant "o:Order" as O
+
+group sd CriticScenario
+
+== Turn 7: customer arrives, Host seats ==
+[-> G : step1_processArrivals()
+activate G
+G -> AS : createArrival(7, 3)
+activate AS
+create C
+AS -> C : <<create>>
+AS --> G : c
+deactivate AS
+G -> C : chooseFood(menu, comboPolicy)
+activate C
+C --> G : Pasta  (Critic overrides selectItem)
+deactivate C
+deactivate G
+CLI --> Manager : "Cust #3 (Critic, Sat:100, Wants:Pasta)"
+Manager -> CLI : Host: seat at table 1
+CLI -> G : hostSeatCustomer(1)
+activate G
+G -> H : seatCustomer(queue, t1)
+alt Host unused, queue not empty, table free
+  H --> G : true
+else guard fails
+  H --> G : false (task not used up, manager re-selects)
+end
+deactivate G
+
+== Turn 8: Waiter takes the order, Chef starts cooking ==
+Manager -> CLI : Waiter: take order, table 1
+CLI -> G : waiterTakeOrder(1)
+activate G
+G -> W : takeOrder(t1, happyHour)
+activate W
+W -> C : applyDiscount(1800)
+C --> W : 1800  (Critic pays full price)
+note right of W : happyHour.applyTo(1800) leaves\nthe price unchanged (not active)
+create O
+W -> O : <<create>>  (c, Pasta, 1800)
+deactivate W
+deactivate G
+Manager -> CLI : Chef: cook table 1
+CLI -> G : chefCookDish(1)
+activate G
+G -> CH : cookDish(t1, 8)
+activate CH
+CH -> O : cook()
+deactivate CH
+deactivate G
+
+== Turn 9: Chef finishes, order is READY ==
+Manager -> CLI : Chef: cook table 1
+CLI -> G : chefCookDish(1)
+activate G
+G -> CH : cookDish(t1, 9)
+activate CH
+CH -> O : cook()
+CH -> O : markReady(9)  (cooked() is true)
+deactivate CH
+deactivate G
+note right of O : READY at turn 9. Not servable this turn (lag rule).\nCritic satisfaction: 100, 88, 76, 64
+
+== Turn 10: one Waiter task, two candidates ==
+alt Manager serves the Critic
+  Manager -> CLI : Waiter: serve table 1
+  CLI -> G : waiterServeDish(1)
+  activate G
+  G -> W : serveDish(t1, 10)
+  activate W
+  W -> O : canBeServed(10)
+  O --> W : true
+  W -> O : markServed()
+  W -> C : onServed(10)
+  note right of C : served within 3 turns of arrival:\nboostSatisfaction(10), 64 to 74
+  deactivate W
+  deactivate G
+else Manager seats customer 4 instead
+  Manager -> CLI : Waiter: seat at table 2
+  CLI -> G : waiterSeatCustomer(2)
+  activate G
+  G -> W : seatCustomer(queue, t2)
+  deactivate G
+  note right of C : Critic stays READY and loses 12 (64 to 52).\nServed on turn 11: no bonus.
+end
+
+== Turns 10 and 11: eating ==
+loop each end of turn until status is READY_TO_PAY
+  G -> O : tickEating()
+  note right of O : first tick after serving is skipped (justServed),\nthen status becomes READY_TO_PAY
+end
+
+== Turn 12: payment, automatic ==
+CLI -> G : cashierCollectPayment()
+activate G
+G -> K : collectPayment(tables)
+activate K
+loop for each table t in tables
+  K -> O : getStatus()
+end
+alt eligible table found and Cashier has not acted
+  K -> O : markPaid()
+  K --> G : PaymentResult(1800, satisfaction)
+  note right of G : bank += 1800, satisfaction total += 74 (or 52),\npaidCustomerCount++
+else nobody is READY_TO_PAY
+  K --> G : null
+end
+deactivate K
+deactivate G
+
+== After turn 18: result check ==
+[-> CLI : displayGameResult()
+activate CLI
+CLI -> G : isVictory()
+G --> CLI : true or false
+note right of G : paid >= 4 and bank >= 4500\nand satisfaction total >= 60 x paid
+CLI --> Manager : "VICTORY ACHIEVED" or "GAME OVER"
+deactivate CLI
+
+end
+@enduml
