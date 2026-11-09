@@ -23,11 +23,11 @@ for stage in stage-1 stage-2 stage-3; do
   for input in "$ROOT/test-runs/$stage"/*.in; do
     name="$(basename "$input" .in)"
     java -cp "$TMP/$stage" Main < "$input" > "$TMP/$stage.$name.actual" 2>/dev/null
-    if diff -q "$ROOT/test-runs/$stage/$name.expected" "$TMP/$stage.$name.actual" > /dev/null; then
+    if diff --strip-trailing-cr -q "$ROOT/test-runs/$stage/$name.expected" "$TMP/$stage.$name.actual" > /dev/null; then
       echo "PASS  $stage/$name"
     else
       echo "FAIL  $stage/$name"; fail=1
-      diff "$ROOT/test-runs/$stage/$name.expected" "$TMP/$stage.$name.actual" | head -8
+      diff --strip-trailing-cr "$ROOT/test-runs/$stage/$name.expected" "$TMP/$stage.$name.actual" | head -8
     fi
   done
 done
