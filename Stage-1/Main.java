@@ -3,7 +3,7 @@ import engine.*;
 import ui.*;
 
 public class Main {
-
+    
     public static void main(String[] args) {
         RestaurantGame game = new RestaurantGame();
         GameCLI cli = new GameCLI(game);
