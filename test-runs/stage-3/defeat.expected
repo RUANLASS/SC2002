@@ -1,0 +1,840 @@
+==================================================
+         WELCOME TO RESTAURANT RUSH!           
+   Survive 18 turns, serve customers, and profit! 
+==================================================
+--------------------------------------------------
+>>> TURN 1 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (1 waiting): [ Cust #1 (Regular, Sat:100, Wants:Salad) ]
+
+Tables Status:
+  Table 1: [ EMPTY ]
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): >> Waiter skipped this turn.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 0
+Unhappy Departures: 0
+Revenue: $0.00
+Average Satisfaction of Paid Customers: N/A
+Turns Used: 1
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 2 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (1 waiting): [ Cust #1 (Regular, Sat:92, Wants:Salad) ]
+
+Tables Status:
+  Table 1: [ EMPTY ]
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): >> Waiter skipped this turn.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 0
+Unhappy Departures: 0
+Revenue: $0.00
+Average Satisfaction of Paid Customers: N/A
+Turns Used: 2
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 3 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (1 waiting): [ Cust #1 (Regular, Sat:84, Wants:Salad) ]
+
+Tables Status:
+  Table 1: [ EMPTY ]
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): >> Waiter skipped this turn.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 0
+Unhappy Departures: 0
+Revenue: $0.00
+Average Satisfaction of Paid Customers: N/A
+Turns Used: 3
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 4 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #1 (Regular, Sat:76, Wants:Salad) Cust #2 (VIP, Sat:100, Wants:Burger + Pasta Combo) ]
+
+Tables Status:
+  Table 1: [ EMPTY ]
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): >> Waiter skipped this turn.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 0
+Unhappy Departures: 0
+Revenue: $0.00
+Average Satisfaction of Paid Customers: N/A
+Turns Used: 4
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 5 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #1 (Regular, Sat:68, Wants:Salad) Cust #2 (VIP, Sat:95, Wants:Burger + Pasta Combo) ]
+
+Tables Status:
+  Table 1: [ EMPTY ]
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to seat customer (1-2): >> Success: Customer seated at Table 1!
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 0
+Unhappy Departures: 0
+Revenue: $0.00
+Average Satisfaction of Paid Customers: N/A
+Turns Used: 5
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 6 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (1 waiting): [ Cust #2 (VIP, Sat:90, Wants:Burger + Pasta Combo) ]
+
+Tables Status:
+  Table 1: Cust #1 (Regular, Sat:60) | Order: No Order Yet
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to take order from (1-2): >> Success: Order taken for Table 1: Salad, bill $9.00
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): Enter table number to cook for (1-2): >> Success: Chef prepared the dish for Table 1! (Dish is now READY)
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 0
+Unhappy Departures: 0
+Revenue: $0.00
+Average Satisfaction of Paid Customers: N/A
+Turns Used: 6
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 7 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #2 (VIP, Sat:85, Wants:Burger + Pasta Combo) Cust #3 (Critic, Sat:100, Wants:Pasta) ]
+
+Tables Status:
+  Table 1: Cust #1 (Regular, Sat:52) | Order: Salad (READY)
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to serve (1-2): >> Success: Dish served to Table 1! Customer is now eating.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 1
+Unhappy Departures: 0
+Revenue: $0.00
+Average Satisfaction of Paid Customers: N/A
+Turns Used: 7
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 8 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #2 (VIP, Sat:80, Wants:Burger + Pasta Combo) Cust #3 (Critic, Sat:88, Wants:Pasta) ]
+
+Tables Status:
+  Table 1: Cust #1 (Regular, Sat:52) | Order: Salad (SERVED)
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to seat customer (1-2): >> Success: Customer seated at Table 2!
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 1
+Unhappy Departures: 0
+Revenue: $0.00
+Average Satisfaction of Paid Customers: N/A
+Turns Used: 8
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 9 / 18 | Bank: $0.00 | Abandoned: 0 | Mean Satisfaction: 0 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (1 waiting): [ Cust #3 (Critic, Sat:76, Wants:Pasta) ]
+
+Tables Status:
+  Table 1: Cust #1 (Regular, Sat:52) | Order: Salad (READY_TO_PAY)
+  Table 2: Cust #2 (VIP, Sat:75) | Order: No Order Yet
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to take order from (1-2): >> Success: Order taken for Table 2: Burger + Pasta Combo, bill $26.73
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): Enter table number to cook for (1-2): >> Success: Chef prepared the dish for Table 2! (Dish is now 1 out of 3)
+
+[Cashier Actions]:
+>> Success: Payment collected from oldest finished customer! Table freed.
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 1
+Unhappy Departures: 0
+Revenue: $9.00
+Average Satisfaction of Paid Customers: 52
+Turns Used: 9
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 10 / 18 | Bank: $9.00 | Abandoned: 0 | Mean Satisfaction: 52 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #3 (Critic, Sat:64, Wants:Pasta) Cust #4 (Regular, Sat:100, Wants:Salad + Burger Combo) ]
+
+Tables Status:
+  Table 1: [ EMPTY ]
+  Table 2: Cust #2 (VIP, Sat:70) | Order: Burger + Pasta Combo (ORDERED)
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to seat customer (1-2): >> Success: Customer seated at Table 1!
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): Enter table number to cook for (1-2): >> Success: Chef prepared the dish for Table 2! (Dish is now 2 out of 3)
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 1
+Unhappy Departures: 0
+Revenue: $9.00
+Average Satisfaction of Paid Customers: 52
+Turns Used: 10
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 11 / 18 | Bank: $9.00 | Abandoned: 0 | Mean Satisfaction: 52 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (1 waiting): [ Cust #4 (Regular, Sat:92, Wants:Salad + Burger Combo) ]
+
+Tables Status:
+  Table 1: Cust #3 (Critic, Sat:52) | Order: No Order Yet
+  Table 2: Cust #2 (VIP, Sat:65) | Order: Burger + Pasta Combo (ORDERED)
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to take order from (1-2): >> Success: Order taken for Table 1: Pasta, bill $18.00
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): Enter table number to cook for (1-2): >> Success: Chef prepared the dish for Table 1! (Dish is now 1 out of 2)
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 1
+Unhappy Departures: 0
+Revenue: $9.00
+Average Satisfaction of Paid Customers: 52
+Turns Used: 11
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 12 / 18 | Bank: $9.00 | Abandoned: 0 | Mean Satisfaction: 52 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (1 waiting): [ Cust #4 (Regular, Sat:84, Wants:Salad + Burger Combo) ]
+
+Tables Status:
+  Table 1: Cust #3 (Critic, Sat:40) | Order: Pasta (ORDERED)
+  Table 2: Cust #2 (VIP, Sat:60) | Order: Burger + Pasta Combo (ORDERED)
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): >> Waiter skipped this turn.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): Enter table number to cook for (1-2): >> Success: Chef prepared the dish for Table 1! (Dish is now READY)
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 1
+Unhappy Departures: 0
+Revenue: $9.00
+Average Satisfaction of Paid Customers: 52
+Turns Used: 12
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 13 / 18 | Bank: $9.00 | Abandoned: 0 | Mean Satisfaction: 52 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #4 (Regular, Sat:76, Wants:Salad + Burger Combo) Cust #5 (Regular, Sat:100, Wants:Burger) ]
+
+Tables Status:
+  Table 1: Cust #3 (Critic, Sat:28) | Order: Pasta (READY)
+  Table 2: Cust #2 (VIP, Sat:55) | Order: Burger + Pasta Combo (ORDERED)
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to serve (1-2): >> Success: Dish served to Table 1! Customer is now eating.
+>> Critic #3 was kept waiting 6 turns and is unimpressed. No bonus.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): Enter table number to cook for (1-2): >> Success: Chef prepared the dish for Table 2! (Dish is now READY)
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 2
+Unhappy Departures: 0
+Revenue: $9.00
+Average Satisfaction of Paid Customers: 52
+Turns Used: 13
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 14 / 18 | Bank: $9.00 | Abandoned: 0 | Mean Satisfaction: 52 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #4 (Regular, Sat:68, Wants:Salad + Burger Combo) Cust #5 (Regular, Sat:92, Wants:Burger) ]
+
+Tables Status:
+  Table 1: Cust #3 (Critic, Sat:28) | Order: Pasta (SERVED)
+  Table 2: Cust #2 (VIP, Sat:50) | Order: Burger + Pasta Combo (READY)
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to serve (1-2): >> Success: Dish served to Table 2! Customer is now eating.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 3
+Unhappy Departures: 0
+Revenue: $9.00
+Average Satisfaction of Paid Customers: 52
+Turns Used: 14
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 15 / 18 | Bank: $9.00 | Abandoned: 0 | Mean Satisfaction: 52 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #4 (Regular, Sat:60, Wants:Salad + Burger Combo) Cust #5 (Regular, Sat:84, Wants:Burger) ]
+
+Tables Status:
+  Table 1: Cust #3 (Critic, Sat:28) | Order: Pasta (READY_TO_PAY)
+  Table 2: Cust #2 (VIP, Sat:50) | Order: Burger + Pasta Combo (SERVED)
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): >> Waiter skipped this turn.
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> Success: Payment collected from oldest finished customer! Table freed.
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 3
+Unhappy Departures: 0
+Revenue: $27.00
+Average Satisfaction of Paid Customers: 40
+Turns Used: 15
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 16 / 18 | Bank: $27.00 | Abandoned: 0 | Mean Satisfaction: 40 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (3 waiting): [ Cust #4 (Regular, Sat:52, Wants:Salad + Burger Combo) Cust #5 (Regular, Sat:76, Wants:Burger) Cust #6 (Regular, Sat:100, Wants:Pasta + Salad Combo) ]
+
+Tables Status:
+  Table 1: [ EMPTY ]
+  Table 2: Cust #2 (VIP, Sat:50) | Order: Burger + Pasta Combo (READY_TO_PAY)
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to seat customer (1-2): >> Success: Customer seated at Table 1!
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): >> Chef skipped this turn.
+
+[Cashier Actions]:
+>> Success: Payment collected from oldest finished customer! Table freed.
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 3
+Unhappy Departures: 0
+Revenue: $53.73
+Average Satisfaction of Paid Customers: 43
+Turns Used: 16
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 17 / 18 | Bank: $53.73 | Abandoned: 0 | Mean Satisfaction: 43 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #5 (Regular, Sat:68, Wants:Burger) Cust #6 (Regular, Sat:92, Wants:Pasta + Salad Combo) ]
+
+Tables Status:
+  Table 1: Cust #4 (Regular, Sat:44) | Order: No Order Yet
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to take order from (1-2): >> Success: Order taken for Table 1: Salad + Burger Combo, bill $21.60
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): Enter table number to cook for (1-2): >> Success: Chef prepared the dish for Table 1! (Dish is now 1 out of 2)
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 3
+Unhappy Departures: 0
+Revenue: $53.73
+Average Satisfaction of Paid Customers: 43
+Turns Used: 17
+--------------------------------------------------
+
+--------------------------------------------------
+>>> TURN 18 / 18 | Bank: $53.73 | Abandoned: 0 | Mean Satisfaction: 43 <<<
+--------------------------------------------------
+Happy Hour: AVAILABLE (can be used once)
+Waiting Queue (2 waiting): [ Cust #5 (Regular, Sat:60, Wants:Burger) Cust #6 (Regular, Sat:84, Wants:Pasta + Salad Combo) ]
+
+Tables Status:
+  Table 1: Cust #4 (Regular, Sat:36) | Order: Salad + Burger Combo (ORDERED)
+  Table 2: [ EMPTY ]
+
+=== ASSIGN STAFF ACTIONS (1 action each per turn) ===
+
+[Happy Hour] Available once per game. Lasts 2 turns (this turn + next):
+  20% off orders taken, +15 satisfaction to customers still waiting.
+  1. Activate Happy Hour now
+  2. Not now
+Select (1-2): 
+[Host Options]:
+  1. Seat a customer from queue
+  2. Skip host action
+Select action (1-2): >> Host skipped this turn.
+
+[Waiter Options]:
+  1. Seat a customer from queue
+  2. Take order from a table
+  3. Serve ready dish to a table
+  4. Skip waiter action
+Select action (1-4): Enter table number to seat customer (1-2): >> Success: Customer seated at Table 2!
+
+[Chef Options]:
+  1. Cook an order for a table
+  2. Skip chef action
+Select action (1-2): Enter table number to cook for (1-2): >> Success: Chef prepared the dish for Table 1! (Dish is now READY)
+
+[Cashier Actions]:
+>> No customer is currently READY_TO_PAY. Moving on...
+
+--------------------------------------------------
+>>> END OF TURN SUMMARY <<<
+Served Count: 3
+Unhappy Departures: 0
+Revenue: $53.73
+Average Satisfaction of Paid Customers: 43
+Turns Used: 18
+--------------------------------------------------
+
+
+==================================================
+                   GAME OVER                      
+ Final Bank Balance : $53.73
+ Total Abandonments : 0
+ Restaurant failed to meet the target requirements.
+==================================================
