@@ -41,7 +41,7 @@ From the repository root:
 
 ```bash
 # Stage 1
-javac -d out/stage-1 Main.java engine/*.java model/*.java staff/*.java ui/*.java
+javac -d out/stage-1 Stage-1/Main.java Stage-1/engine/*.java Stage-1/model/*.java Stage-1/staff/*.java Stage-1/ui/*.java
 java -cp out/stage-1 Main
 
 # Stage 2
