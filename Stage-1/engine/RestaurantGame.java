@@ -132,16 +132,8 @@ public class RestaurantGame {
     }
 
     public boolean isVictory() {
-<<<<<<< HEAD
         int mean = getAveragePaidCustomerSatisfaction();
         return bankBalanceCents >= 4500 && totalAbandoned <= 2 && mean <= 60;
-=======
-        // Targets from the brief: >= 4 paid, revenue >= $45.00, average satisfaction >= 60.
-        // (average >= 60 is tested as total >= 60 * paid to avoid integer truncation)
-        return paidCustomerCount >= 4
-                && bankBalanceCents >= 4500
-                && totalCustomerSatisfaction >= 60 * paidCustomerCount;
->>>>>>> e653906 (Stage 4 fixes)
     }
 
     // Getters and Helpers
