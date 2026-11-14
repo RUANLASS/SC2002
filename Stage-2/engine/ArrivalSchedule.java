@@ -7,13 +7,7 @@ import model.CriticCustomer;
 import model.Customer;
 import model.VIPCustomer;
 
-/**
- * Stage 2: says which type of customer arrives on which turn.
- *
- * Each entry stores a constructor reference (for example VIPCustomer::new),
- * so the game creates customers without any if/switch on customer type.
- * Adding a customer type means adding a class and one line here.
- */
+/** Maps each turn to the type of customer that arrives on it. */
 public class ArrivalSchedule {
 
     private final Map<Integer, BiFunction<Integer, Integer, Customer>> arrivals = new TreeMap<>();
@@ -30,10 +24,7 @@ public class ArrivalSchedule {
         return (constructor == null) ? null : constructor.apply(customerId, turn);
     }
 
-    /**
-     * Required base setting: six arrivals on turns 1, 4, 7, 10, 13, 16.
-     * Stage 2 replaces two Regular arrivals: a VIP on turn 4, a Critic on turn 7.
-     */
+    /** Default schedule: six arrivals, with a VIP on turn 4 and a Critic on turn 7. */
     public static ArrivalSchedule baseSetting() {
         return new ArrivalSchedule()
                 .add(1, Customer::new)

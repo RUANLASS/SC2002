@@ -5,8 +5,7 @@ import model.*;
 
 public class Cashier extends Staff {
 
-    // Action: Collect payment from oldest customer ready to pay.
-    // Returns the amount paid in cents, or -1 if no eligible customer exists/action already used.
+    // Collects payment from the oldest customer ready to pay.
     public record PaymentResult(int amountPaid, int custSat) {}
 
     public PaymentResult collectPayment(List<Table> tables) {

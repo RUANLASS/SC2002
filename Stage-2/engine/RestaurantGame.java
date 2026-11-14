@@ -140,8 +140,7 @@ public class RestaurantGame {
     }
 
     public boolean isVictory() {
-        // Targets from the brief: >= 4 paid, revenue >= $45.00, average satisfaction >= 60.
-        // (average >= 60 is tested as total >= 60 * paid to avoid integer truncation)
+        // Victory: >= 4 paid, revenue >= $45.00, average satisfaction >= 60
         return paidCustomerCount >= 4
                 && bankBalanceCents >= 4500
                 && totalCustomerSatisfaction >= 60 * paidCustomerCount;
