@@ -4,13 +4,7 @@ import java.util.Queue;
 import model.Customer;
 import model.Table;
 
-/**
- * Stage 3: the Host seats at most one queued customer per turn.
- *
- * This is IN ADDITION to the Waiter's one task per turn, so the Waiter is free
- * to take orders or serve while the Host fills tables.
- * The Host only seats; it never takes orders or serves.
- */
+/** Seats at most one queued customer per turn. */
 public class Host extends Staff {
 
     public boolean seatCustomer(Queue<Customer> queue, Table table) {

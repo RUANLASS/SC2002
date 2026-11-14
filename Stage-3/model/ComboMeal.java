@@ -1,16 +1,6 @@
 package model;
 
-/**
- * Stage 3: a combo is built by COMPOSING two existing menu items.
- *
- * It implements MenuItem, so Order, Chef, Waiter and Cashier handle it exactly
- * like a single dish and none of them had to change (open for extension).
- *
- *  - Preparation units = units of the first item + units of the second item.
- *  - Price = 90% of the two prices combined, rounded half-up to the nearest cent
- *    (integer arithmetic, no floating point).
- *    Example: Salad + Pasta = (900 + 1800) * 90% = 2430 cents = $24.30, 3 units.
- */
+/** Menu item composed of two items, priced at 90% of their combined price. */
 public class ComboMeal implements MenuItem {
 
     private static final int COMBO_PERCENT = 90;

@@ -24,8 +24,7 @@ public class Waiter extends Staff {
 
         Customer c = table.getCurrentCustomer();
         MenuItem item = c.getItem();
-        // Price locked at order time. Stage 3 order of discounts:
-        // customer discount (e.g. VIP) FIRST, then Happy Hour.
+        // Price locked at order time: customer discount first, then Happy Hour.
         int price = happyHour.applyTo(c.applyDiscount(item.getPriceCents()));
         table.setOrder(new Order(c, item, price));
         actionUsed = true;

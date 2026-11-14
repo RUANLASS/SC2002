@@ -1,10 +1,6 @@
 package model;
 
-/**
- * Stage 2: VIP customer.
- * Loses 5 satisfaction per waiting turn and gets 10% off the bill.
- * Follows the same order and service flow as every other customer.
- */
+/** VIP: loses 5 satisfaction per turn and gets 10% off the bill. */
 public class VIPCustomer extends Customer {
 
     private static final int VIP_DECAY_RATE = 5;

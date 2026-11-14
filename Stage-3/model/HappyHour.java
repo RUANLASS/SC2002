@@ -1,19 +1,6 @@
 package model;
 
-/**
- * Stage 3: Happy Hour pricing policy.
- *
- *  - Can be activated ONCE per game, at the start of a turn.
- *  - Lasts for the activation turn and the next one (2 turns).
- *  - Orders taken while active get 20% off. The discount is applied AFTER the
- *    customer's own discount (e.g. VIP) and the resulting price is locked into
- *    the Order when the order is taken, so it never changes afterwards.
- *  - While active, customers still waiting for a table or food recover
- *    +15 satisfaction at turn start (the game applies this, using
- *    {@link #getRecoveryPoints()}).
- *
- * All Happy Hour state and arithmetic is encapsulated here.
- */
+/** One-time, two-turn 20% discount with satisfaction recovery. */
 public class HappyHour {
 
     public static final int DURATION_TURNS = 2;
@@ -23,7 +10,7 @@ public class HappyHour {
     private boolean used = false;
     private int turnsRemaining = 0;
 
-    /** Switches Happy Hour on. Fails (returns false) if it was already used. */
+    /** Switches Happy Hour on. */
     public boolean activate() {
         if (used) {
             return false;
@@ -60,11 +47,7 @@ public class HappyHour {
         return DISCOUNT_PERCENT;
     }
 
-    /**
-     * Price after Happy Hour. Pass in the price that has ALREADY had the
-     * customer discount applied. Returns it unchanged when not active.
-     * Rounded half-up in integer cents.
-     */
+    /** Returns the price after the Happy Hour discount, or unchanged when inactive. */
     public int applyTo(int priceCents) {
         if (!isActive()) {
             return priceCents;

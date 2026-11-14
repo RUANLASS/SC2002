@@ -2,20 +2,7 @@ package model;
 
 import java.util.List;
 
-/**
- * Stage 2: Critic customer.
- * Loses 12 satisfaction per waiting turn and pays full price.
- *
- * Special behaviour (documented in the README):
- *  1. Order preference: always orders the most demanding dish on the menu
- *     (most preparation units, then highest price). On the base menu: Pasta.
- *  2. Reaction to service: if the dish is served within 3 turns of the
- *     Critic's arrival (the fastest possible service), the Critic is
- *     impressed and gains 10 satisfaction (capped at 100). Slower service
- *     earns no bonus. This rewards the manager for prioritising the Critic.
- *
- * Both behaviours live in this class. The controller never checks for it.
- */
+/** Critic: loses 12 satisfaction per turn, orders the hardest dish, gains 10 on fast service. */
 public class CriticCustomer extends Customer {
 
     private static final int CRITIC_DECAY_RATE = 12;
