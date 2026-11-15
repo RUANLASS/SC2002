@@ -4,7 +4,8 @@ SC2002 group assignment: a turn-based restaurant management game in Java with a 
 
 - **Repository:** https://github.com/RUANLASS/SC2002
 - **Lab group:** SCED, group 2
-- **Members:** Yong Jia, Harish, Vishal, Lakshya
+- **Members:** YANG YONGJIA, HARISH BALAMURALI MYTHILI, SHANMUGANATHAN VISHAL, SARIN LAKSHYA ANUJ
+- **Video:** https://youtu.be/kMqX5hegKAs
 
 ## Contents
 
@@ -168,14 +169,14 @@ We fixed two rule bugs in all three stages because our code did not match the br
 
 ## Video timestamps
 
-Video: TODO (file name or link). Timestamps below are the plan; replace them with the real times after recording.
+Video: https://youtu.be/kMqX5hegKAs. The video is 16:36 long and has five parts. Times are minutes:seconds from the start of the video.
 
-| # | Segment | Presenter | Time |
-| --- | --- | --- | --- |
-| 1 | Game launching from the submitted project | TODO | 0:00 |
-| 2 | Meaningful manager choices, including a staff-constrained decision | TODO | 1:30 |
-| 3 | A dish going READY, SERVED, then payment | TODO | 4:00 |
-| 4 | VIP and Critic behaviour | TODO | 6:00 |
-| 5 | Stage 3 feature: Host, combo, Happy Hour | TODO | 8:00 |
-| 6 | One victory and one defeat | TODO | 10:30 |
-| 7 | Stage tag comparisons and the diagrams | TODO | 12:30 |
+| Part | Presenter | Starts | Length | Brief segments | What it covers |
+| --- | --- | --- | --- | --- | --- |
+| 1 | YANG YONGJIA | 0:00 | 3:56 | 1, 2, 4 | Launching the game from the unzipped project, the rules and the manager's choices (a VIP at turn 4, the Critic at turn 10). Shows the decision where the Waiter can serve the Critic or seat the next customer, not both, with a replay of the other choice. |
+| 2 | HARISH BALAMURALI MYTHILI | 3:56 | 3:39 | 3, 5, 6 | One dish from kitchen to payment (READY, SERVED, READY_TO_PAY, paid). The Stage 1 victory and defeat, the Stage 3 Host, combo meal and Happy Hour, and the Stage 3 victory and defeat. |
+| 3 | SHANMUGANATHAN VISHAL | 7:35 | 3:58 | 4, 7 | The three stages and the class diagrams for Stages 1, 2 and 3, showing how the VIP, the Critic and the Stage 3 features fit into the code. The git tag comparisons. |
+| 4 | SARIN LAKSHYA ANUJ | 11:33 | 3:33 | 7 | The Critic use case followed step by step in the sequence diagram. |
+| 5 | SARIN LAKSHYA ANUJ | 15:06 | 1:30 | none | Design principles in the code: Open-Closed, Liskov Substitution, encapsulation and high cohesion, and Single Responsibility. |
+
+The segment numbers match the 7 required segments in section 6.2 of the brief: 1 game launching, 2 manager choices, 3 dish to payment, 4 VIP or Critic behaviour, 5 Stage 3 feature, 6 victory and defeat, 7 stage tag comparisons and diagrams.
