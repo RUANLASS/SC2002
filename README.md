@@ -23,6 +23,7 @@ SC2002 group assignment: a turn-based restaurant management game in Java with a 
 
 - JDK 17 or newer (the Cashier uses a Java `record`). Tested with JDK 21.
 - No libraries and no network needed.
+- Commands are given for macOS and Linux (bash) and for Windows (PowerShell, which is built into Windows 10 and 11).
 
 ## Stages, folders and tags
 
@@ -40,6 +41,8 @@ Every stage has the same package layout: `engine` (game controller), `model` (en
 
 From the repository root:
 
+macOS and Linux (bash):
+
 ```bash
 # Stage 1
 javac -d out/stage-1 Stage-1/Main.java Stage-1/engine/*.java Stage-1/model/*.java Stage-1/staff/*.java Stage-1/ui/*.java
@@ -54,64 +57,44 @@ java -cp out/stage-2 Main
 java -cp out/stage-3 Main
 ```
 
-To replay a recorded run instead of typing, redirect an input file: `java -cp out/stage-3 Main < test-runs/stage-3/victory.in`.
+Windows (PowerShell):
 
-## How a turn is played
+```powershell
+# Stage 1
+javac -d out\stage-1 (Get-ChildItem -Path Stage-1 -Recurse -Filter *.java | ForEach-Object FullName)
+java -cp out\stage-1 Main
 
-The game always offers the required base setting: 18 turns, 2 tables, one Waiter (one task per turn), one Chef (one preparation unit per turn), one Cashier (one payment per turn), and one arrival at the start of turns 1, 4, 7, 10, 13 and 16. The objective, checked after turn 18, is at least 4 paid customers, revenue of at least $45.00 and an average satisfaction of paid customers of at least 60.
+# Stage 2
+javac -d out\stage-2 (Get-ChildItem -Path Stage-2 -Recurse -Filter *.java | ForEach-Object FullName)
+java -cp out\stage-2 Main
 
-Each turn the game shows the turn number, revenue, average satisfaction of paid customers, the waiting queue, both tables with each customer's satisfaction and order status, and then asks for the manager's choices in this order:
+# Stage 3 (final version)
+javac -d out\stage-3 (Get-ChildItem -Path Stage-3 -Recurse -Filter *.java | ForEach-Object FullName)
+java -cp out\stage-3 Main
+```
 
-| Order | Prompt | Choices |
-| --- | --- | --- |
-| 1 | Happy Hour (Stage 3, until used) | activate now, or not now |
-| 2 | Host (Stage 3) | seat a queued customer at a chosen table, or skip |
-| 3 | Waiter | seat a queued customer, take an order, serve a READY dish, or wait |
-| 4 | Chef | cook one unit of an ordered dish at a chosen table, or wait |
-| 5 | Cashier | automatic: collects from the READY_TO_PAY customer who arrived earliest |
+To replay a recorded run instead of typing, feed in an input file.
 
-An invalid choice (out of range, not a number, an empty table, a dish that is not ready) prints why it failed and asks again. It does not use up the staff task. At the end of each turn the game prints the served count, unhappy departures, revenue, average satisfaction of paid customers (N/A until someone pays) and turns used.
+macOS and Linux: `java -cp out/stage-3 Main < test-runs/stage-3/victory.in`
 
-## Rules as implemented
-
-**Customer food choice** (no randomness; the choice is shown in the queue and again when the order is placed):
-
-- Regular and VIP customers cycle through the menu by customer id: #1 Salad, #2 Burger, #3 Pasta, #4 Salad, and so on.
-- A Critic always orders the most demanding dish: most preparation units, then highest price (Pasta on the base menu).
-- Stage 3 combo rule: a customer with an **even id** upgrades to a combo of their preferred dish plus the next dish on the menu (wrapping round). Odd ids keep the single dish.
-
-**Arrivals on the base setting**
-
-| Turn | Customer | Stage 1 | Stage 2 and 3 type | Dish in Stage 1 and 2 | Dish in Stage 3 |
-| --- | --- | --- | --- | --- | --- |
-| 1 | #1 | Regular | Regular | Salad | Salad |
-| 4 | #2 | Regular | **VIP** | Burger | Burger + Pasta Combo |
-| 7 | #3 | Regular | **Critic** | Pasta | Pasta |
-| 10 | #4 | Regular | Regular | Salad | Salad + Burger Combo |
-| 13 | #5 | Regular | Regular | Burger | Burger |
-| 16 | #6 | Regular | Regular | Pasta | Pasta + Salad Combo |
-
-**Satisfaction.** Every customer who has not yet been served (waiting for a table, seated without an order, ORDERED or READY) loses points at the end of each turn: Regular 8, VIP 5, Critic 12, minimum 0. A customer who reaches 0 leaves without paying. The order is cancelled and the table is freed. Served, eating and ready-to-pay customers lose nothing.
-
-**Timing.** A dish finished this turn is served next turn at the earliest. A customer served on turn T eats during turn T+1, becomes READY_TO_PAY at the end of that turn and pays on turn T+2 at the earliest. Satisfaction is recorded when the customer pays.
-
-**Critic behaviour** (Stage 2): a Critic always orders the most demanding dish. If the dish is served within 3 turns of the Critic's arrival (the fastest possible service), the Critic gains 10 satisfaction (maximum 100). Slower service earns no bonus. Both behaviours are in `CriticCustomer`, so the controller never checks the customer type.
-
-**Host** (Stage 3): seats at most one queued customer per turn, on top of the Waiter's task. The Host acts before the Waiter, so the Waiter can take the new customer's order in the same turn.
-
-**ComboMeal** (Stage 3): two existing menu items. The preparation units are the sum of the two. The price is 90% of the combined price, rounded to the nearest cent (Salad + Pasta = $24.30, 3 units).
-
-**Happy Hour** (Stage 3): can be activated once per game at the start of a turn. It lasts for that turn and the next, and the remaining time is shown. Orders taken while it is active get 20% off, applied after the customer's own discount (a VIP's Burger is $15.00 x 0.9 x 0.8 = $10.80). The price is locked when the order is taken. Customers still waiting for a table or food recover 15 satisfaction (maximum 100) at the start of each active turn.
-
-**Money** is stored as integer cents and shown as dollars with two decimals.
+Windows (PowerShell): `Get-Content test-runs\stage-3\victory.in | java -cp out\stage-3 Main`
 
 ## Stage comparisons
 
 Each stage is a full copy in its own folder, so GitHub's compare view shows every folder as new files. To see only what changed, use a local diff from the repository root:
 
+macOS and Linux (bash):
+
 ```bash
 diff -ru Stage-1 Stage-2   # 1 -> 2
 diff -ru Stage-2 Stage-3   # 2 -> 3
+```
+
+Windows (PowerShell, needs Git for Windows):
+
+```powershell
+git diff --no-index Stage-1 Stage-2   # 1 -> 2
+git diff --no-index Stage-2 Stage-3   # 2 -> 3
 ```
 
 ### Stage 1 to Stage 2

@@ -4,7 +4,9 @@ These notes give one reproducible **victory** and one reproducible **defeat** fo
 
 ## 1. Replaying the runs
 
-You need a JDK, version 17 or newer (the Cashier uses a Java `record`). From the repository root, replay one run by hand (each stage is in its own folder):
+You need a JDK, version 17 or newer (the Cashier uses a Java `record`). Commands are given for macOS and Linux (bash) and for Windows (PowerShell). From the repository root, replay one run by hand (each stage is in its own folder).
+
+macOS and Linux (bash):
 
 ```bash
 # Stage 1
@@ -20,7 +22,39 @@ java -cp out/stage-2 Main < test-runs/stage-2/victory.in
 java -cp out/stage-3 Main < test-runs/stage-3/victory.in
 ```
 
-Run without `< file.in` to play interactively. To check a run, save the output and compare it with the run's `.expected` file, which holds the complete console output.
+Windows (PowerShell):
+
+```powershell
+# Stage 1
+javac -d out\stage-1 (Get-ChildItem -Path Stage-1 -Recurse -Filter *.java | ForEach-Object FullName)
+Get-Content test-runs\stage-1\victory.in | java -cp out\stage-1 Main
+
+# Stage 2
+javac -d out\stage-2 (Get-ChildItem -Path Stage-2 -Recurse -Filter *.java | ForEach-Object FullName)
+Get-Content test-runs\stage-2\victory.in | java -cp out\stage-2 Main
+
+# Stage 3
+javac -d out\stage-3 (Get-ChildItem -Path Stage-3 -Recurse -Filter *.java | ForEach-Object FullName)
+Get-Content test-runs\stage-3\victory.in | java -cp out\stage-3 Main
+```
+
+Run without the input file to play interactively. To check a run, save the output and compare it with the run's `.expected` file, which holds the complete console output. For example, for the Stage 3 victory:
+
+macOS and Linux (bash):
+
+```bash
+java -cp out/stage-3 Main < test-runs/stage-3/victory.in > out/victory.actual
+diff test-runs/stage-3/victory.expected out/victory.actual
+```
+
+Windows (PowerShell):
+
+```powershell
+Get-Content test-runs\stage-3\victory.in | java -cp out\stage-3 Main > out\victory.actual
+Compare-Object (Get-Content test-runs\stage-3\victory.expected) (Get-Content out\victory.actual)
+```
+
+No output from `diff` or `Compare-Object` means the run matches. Windows may write `\r\n` line endings, which `Compare-Object` ignores because `Get-Content` reads line by line.
 
 ## 2. Reading an input file
 
