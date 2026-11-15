@@ -162,9 +162,11 @@ We fixed two rule bugs in all three stages because our code did not match the br
 
 ## Design evidence
 
-- Stage 3 class diagram (final design): https://lucid.app/lucidchart/df858552-20ae-40fd-ad71-3b8ac1896168/view
-- Stage 1 and Stage 2 class diagrams: https://lucid.app/lucidchart/c2a458fd-7789-4c5e-bdd0-a143e05d2a3a/view
-- Sequence diagram (Critic scenario): https://lucid.app/lucidchart/03ad86f7-b2db-4a51-9f7d-16c6f6acedbc/edit
+- Stage 1 class diagram: [docs/class-diagram-stage-1.png](docs/class-diagram-stage-1.png)
+- Stage 2 class diagram: [docs/class-diagram-stage-2.png](docs/class-diagram-stage-2.png)
+- Stage 3 class diagram (final design): [docs/class-diagram-stage-3.png](docs/class-diagram-stage-3.png)
+- Sequence diagram (Critic scenario): [docs/sequence-diagram-critic.png](docs/sequence-diagram-critic.png)
+- Editable Lucid versions: [Stage 3 class diagram](https://lucid.app/lucidchart/df858552-20ae-40fd-ad71-3b8ac1896168/view), [Stage 1 and 2 class diagrams](https://lucid.app/lucidchart/c2a458fd-7789-4c5e-bdd0-a143e05d2a3a/view), [sequence diagram](https://lucid.app/lucidchart/03ad86f7-b2db-4a51-9f7d-16c6f6acedbc/edit)
 - Design discussion, functional evidence and reflections: the PDF report submitted with the project
 
 ## Video timestamps
